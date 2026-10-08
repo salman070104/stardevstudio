@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Sparkles, Terminal, Cpu, Layers, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { Logo } from "./Logo";
-import { HeroCardDeck } from "./HeroCardDeck";
+import { HeroLaptopShowcase } from "./HeroLaptopShowcase";
 
 interface HeroProps {
   onOpenContact?: () => void;
@@ -166,9 +166,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             </motion.div>
           </div>
 
-          {/* Right Column: Interactive 3D Showcase Card Deck (Screenshots 1, 2, 3, 4) */}
-          <div className="lg:col-span-5 relative">
-            <HeroCardDeck />
+          {/* Right Column: Rotating Laptop Mockup Showcase */}
+          <div className="lg:col-span-5 relative flex items-center justify-center">
+            <HeroLaptopShowcase />
           </div>
         </div>
       </div>
