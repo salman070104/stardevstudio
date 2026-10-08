@@ -104,10 +104,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
               </button>
 
               <a
-                href="#projects"
+                href="#pricing"
                 className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white/5 hover:bg-white/10 text-neutral-200 border border-white/15 font-semibold text-sm uppercase tracking-wider transition-all duration-200 hover:border-white/30"
               >
-                <span>View Our Work</span>
+                <span>Lihat Paket Harga</span>
               </a>
             </motion.div>
 
