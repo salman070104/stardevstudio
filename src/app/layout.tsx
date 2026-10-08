@@ -60,8 +60,14 @@ export const metadata: Metadata = {
     images: ["/logo/LOGO STARDEVSTUDIO.png"],
   },
   icons: {
-    icon: "/logo/LOGO STARDEVSTUDIO.png",
-    apple: "/logo/LOGO STARDEVSTUDIO.png",
+    icon: [
+      { url: "/logo/povicon.png", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/logo/povicon.png",
+    apple: [
+      { url: "/logo/povicon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
