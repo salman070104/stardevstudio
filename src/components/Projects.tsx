@@ -66,44 +66,39 @@ export const Projects: React.FC = () => {
               transition={{ duration: 0.3 }}
               className="group flex flex-col rounded-3xl bg-[#F8F9FA] border border-neutral-200/90 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-500/40 transition-all duration-300"
             >
-              {/* Visual Mockup Container (Sleek CSS UI placeholder) */}
-              <div className="relative h-64 sm:h-72 w-full bg-[#0B0F19] p-6 flex flex-col justify-between overflow-hidden">
+              {/* Visual Mockup Container (MacBook Showcase) */}
+              <div className="relative h-72 sm:h-80 w-full bg-[#080C14] p-5 sm:p-6 flex flex-col justify-between overflow-hidden">
                 {/* Background glow gradient */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${project.accentBg} opacity-80 group-hover:opacity-100 transition-opacity`}
                 />
 
                 {/* Subtle grid lines */}
-                <div className="absolute inset-0 bg-grid-dark opacity-30" />
+                <div className="absolute inset-0 bg-grid-dark opacity-25 pointer-events-none" />
 
-                {/* Mockup Browser/Window Top Chrome */}
-                <div className="relative z-10 flex items-center justify-between pb-3 border-b border-white/10">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                {/* Top Badge Info */}
+                <div className="relative z-10 flex items-center justify-between">
+                  <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-neutral-300 flex items-center gap-1.5 backdrop-blur-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    <span>{project.category}</span>
                   </div>
-                  <div className="px-3 py-0.5 rounded-md bg-white/5 border border-white/10 text-[10px] font-mono text-neutral-400">
-                    stardevstudio.id / {project.id}
-                  </div>
-                  <span className="text-[10px] font-mono text-cyan-400 font-semibold">
+                  <span className="text-[11px] font-mono text-cyan-400 font-semibold px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/20">
                     {project.year}
                   </span>
                 </div>
 
-                {/* Real Website Screenshot Mockup */}
-                <div className="relative z-10 my-auto rounded-2xl overflow-hidden border border-white/15 shadow-2xl h-44 sm:h-48 group-hover:scale-[1.03] transition-transform duration-500 bg-[#050505]">
+                {/* MacBook Mockup Image (Clean PNG with website inside) */}
+                <div className="relative z-10 my-auto w-full flex items-center justify-center py-2">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full max-h-48 sm:max-h-56 object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.65)] transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19]/80 via-transparent to-transparent" />
                 </div>
 
                 {/* Bottom Metric Label */}
-                <div className="relative z-10 flex items-center justify-between text-xs font-mono text-neutral-400">
+                <div className="relative z-10 flex items-center justify-between text-xs font-mono text-neutral-400 pt-2 border-t border-white/10">
                   <span>{project.metrics.label}</span>
                   <span className="text-white font-bold">{project.metrics.value}</span>
                 </div>

@@ -23,7 +23,7 @@ export const projectsData: ProjectItem[] = [
     tagline: "High-converting digital catalog & checkout experience",
     description:
       "Platform e-commerce katalog digital dan asset studio dengan alur belanja mulus, sistem checkout terintegrasi, dan performa visual sinematik.",
-    image: "/images/1.png",
+    image: "/images/keluargadi.png",
     metrics: { label: "Conversion Rate", value: "+46%" },
     tags: ["Next.js", "Tailwind CSS", "Payment Gateway", "SEO Suite"],
     themeColor: "#2563EB",
@@ -38,7 +38,7 @@ export const projectsData: ProjectItem[] = [
     tagline: "Customer authentication & automated billing engine",
     description:
       "Aplikasi web portal pelanggan modern untuk cek tagihan, riwayat transaksi, dan manajemen akun internet dengan proteksi keamanan tinggi.",
-    image: "/images/2.png",
+    image: "/images/sistem-login.png",
     metrics: { label: "Operational Speed", value: "+340%" },
     tags: ["React", "PostgreSQL", "Tailwind CSS", "REST APIs"],
     themeColor: "#06B6D4",
@@ -53,7 +53,7 @@ export const projectsData: ProjectItem[] = [
     tagline: "Modern ISP broadband & business service showcase",
     description:
       "Website corporate ISP dengan interaktivitas visual 3D modern, informasi paket WiFi interaktif, dan integrasi WhatsApp booking instan.",
-    image: "/images/3.png",
+    image: "/images/Starconnect.png",
     metrics: { label: "Performance Score", value: "99/100" },
     tags: ["Next.js", "TypeScript", "Tailwind", "WhatsApp CRM"],
     themeColor: "#3B82F6",
@@ -68,7 +68,7 @@ export const projectsData: ProjectItem[] = [
     tagline: "Editorial photography studio portfolio & booking system",
     description:
       "Website portfolio kreatif untuk studio fotografi profesional dengan layout editorial, dark mode elegan, dan fitur reservasi jadwal online.",
-    image: "/images/4.png",
+    image: "/images/blokm.png",
     metrics: { label: "User Engagement", value: "4.9/5.0" },
     tags: ["Next.js", "Framer Motion", "Tailwind CSS", "Cloudflare"],
     themeColor: "#0EA5E9",
