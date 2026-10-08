@@ -150,19 +150,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                   </div>
                 </div>
               </div>
-
-              <div className="h-6 w-px bg-white/10 hidden sm:block" />
-
-              <div className="flex items-center gap-4 text-xs font-mono text-neutral-400">
-                <div>
-                  <span className="text-white font-bold text-sm block">100%</span>
-                  <span>Modern Stack</span>
-                </div>
-                <div>
-                  <span className="text-cyan-400 font-bold text-sm block">Sub-Second</span>
-                  <span>Load Speed</span>
-                </div>
-              </div>
             </motion.div>
           </div>
 
