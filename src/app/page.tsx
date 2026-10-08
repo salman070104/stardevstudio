@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TrustIntro } from "@/components/TrustIntro";
@@ -13,15 +13,32 @@ import { SculpturalBanner } from "@/components/SculpturalBanner";
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
 import { ContactModal } from "@/components/ContactModal";
+import { SearchModal } from "@/components/SearchModal";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // Global Cmd+K / Ctrl+K shortcut listener
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setIsSearchOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#050505] text-[#F5F5F5] selection:bg-blue-600 selection:text-white flex flex-col font-sans">
-      {/* Sticky Premium Navbar */}
-      <Navbar onOpenContact={() => setIsContactOpen(true)} />
+      {/* Sticky Premium Navbar with Search Trigger */}
+      <Navbar
+        onOpenContact={() => setIsContactOpen(true)}
+        onOpenSearch={() => setIsSearchOpen(true)}
+      />
 
       {/* Main Content Area */}
       <main className="flex-1">
@@ -60,6 +77,13 @@ export default function Home() {
       <ContactModal
         isOpen={isContactOpen}
         onClose={() => setIsContactOpen(false)}
+      />
+
+      {/* Interactive Quick Search / Command Palette Modal */}
+      <SearchModal
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        onOpenContact={() => setIsContactOpen(true)}
       />
 
       {/* Floating WhatsApp Button */}

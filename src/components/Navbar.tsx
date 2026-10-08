@@ -3,14 +3,15 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Menu, X, Sparkles } from "lucide-react";
+import { Search, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
 interface NavbarProps {
   onOpenContact?: () => void;
+  onOpenSearch?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenSearch }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -64,14 +65,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
             ))}
           </nav>
 
-          {/* CTA & Mobile Hamburger */}
-          <div className="flex items-center gap-3">
+          {/* Search Trigger & Mobile Hamburger */}
+          <div className="flex items-center gap-2.5">
+            {/* Desktop / Tablet Search Trigger Button */}
             <button
-              onClick={onOpenContact}
-              className="relative group hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider text-white overflow-hidden transition-all duration-300 bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50"
+              onClick={onOpenSearch}
+              className="relative group hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider text-white overflow-hidden transition-all duration-300 bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 cursor-pointer"
+              aria-label="Search"
             >
-              <span>Start a Project</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <span>Search</span>
+              <Search className="w-3.5 h-3.5 transition-transform duration-300 group-hover:scale-110" />
+            </button>
+
+            {/* Mobile Search Icon Button */}
+            <button
+              onClick={onOpenSearch}
+              className="sm:hidden p-2 rounded-xl text-neutral-300 hover:text-white bg-white/5 border border-white/10 hover:bg-white/10 transition-colors cursor-pointer"
+              aria-label="Cari di website"
+            >
+              <Search className="w-5 h-5 text-blue-400" />
             </button>
 
             {/* Mobile Menu Button */}
@@ -115,12 +127,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    onOpenContact?.();
+                    onOpenSearch?.();
                   }}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm uppercase tracking-wider shadow-lg shadow-blue-600/30"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm uppercase tracking-wider shadow-lg shadow-blue-600/30 transition-all cursor-pointer"
                 >
-                  <span>Start a Project</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <span>Search</span>
+                  <Search className="w-4 h-4" />
                 </button>
                 <div className="text-center text-xs text-neutral-400 font-mono mt-1">
                   stardevstudio.id • Digital Future
