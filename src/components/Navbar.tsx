@@ -29,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
   const navLinks = [
     { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
+    { name: "Features", href: "#features" },
     { name: "Pricelist", href: "#pricing" },
     { name: "Why Us", href: "#why-us" },
     { name: "Process", href: "#process" },

@@ -88,8 +88,8 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors">
-                  Services
+                <a href="#features" className="hover:text-white transition-colors">
+                  Features
                 </a>
               </li>
               <li>

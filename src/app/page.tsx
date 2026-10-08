@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TrustIntro } from "@/components/TrustIntro";
-import { Services } from "@/components/Services";
+import { FeaturePackage } from "@/components/FeaturePackage";
 import { Pricing } from "@/components/Pricing";
 import { WhyStarDev } from "@/components/WhyStarDev";
 import { Process } from "@/components/Process";
@@ -31,8 +31,8 @@ export default function Home() {
         {/* Trust / Intro Section (Alternating Light #FFFFFF) */}
         <TrustIntro />
 
-        {/* Services / What We Build (Dark #050505) */}
-        <Services onSelectService={() => setIsContactOpen(true)} />
+        {/* Feature Package / Apa yang akan Anda dapatkan? (Alternating Light #FFFFFF, matching foto 1) */}
+        <FeaturePackage />
 
         {/* Pricelist / Paket Bisnis (Alternating Light #FFFFFF, matching foto 1) */}
         <Pricing />
