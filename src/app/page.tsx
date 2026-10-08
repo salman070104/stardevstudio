@@ -31,6 +31,9 @@ export default function Home() {
         {/* Trust / Intro Section (Alternating Light #FFFFFF) */}
         <TrustIntro />
 
+        {/* Sculptural Giant 3D/Brand Typography Banner (Dark) */}
+        <SculpturalBanner />
+
         {/* Feature Package / Apa yang akan Anda dapatkan? (Alternating Light #FFFFFF, matching foto 1) */}
         <FeaturePackage />
 
@@ -45,9 +48,6 @@ export default function Home() {
 
         {/* About / Technology with Purpose (Dark #050505) */}
         <About />
-
-        {/* Sculptural Giant 3D/Brand Typography Banner (Dark) */}
-        <SculpturalBanner />
 
         {/* High-Impact Final CTA Section (Dark) */}
         <CTA onOpenContact={() => setIsContactOpen(true)} />
