@@ -13,18 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "StarDev Studio — Web, AI & Digital Solutions",
+  title: "Jasa Pembuatan Website Profesional & UMKM | StarDev Studio",
   description:
-    "StarDev Studio membangun website, web application, AI automation, dan digital solutions untuk bisnis modern.",
+    "Jasa buat website profesional, modern, responsif, dan terpercaya untuk bisnis Anda. Paket mulai 700rb. Gratis domain & hosting, sertifikat SSL HTTPS, dan optimasi SEO Google. Garansi revisi. Konsultasi WhatsApp gratis.",
   keywords: [
+    "Jasa Website",
+    "Jasa Pembuatan Website",
+    "Jasa Website UMKM",
+    "Jasa Website Profesional",
+    "Buat Website Murah",
+    "Paket Website Mulai 700rb",
     "StarDev Studio",
-    "Web Development",
-    "Web Application",
-    "AI Automation",
-    "Company Profile",
-    "Software Agency",
-    "Digital Solutions",
-    "stardevstudio.id"
+    "Web Development Indonesia",
+    "Jasa Web Company Profile",
+    "Jasa Buat Website Toko Online",
+    "stardevstudio.id",
   ],
   authors: [{ name: "StarDev Studio", url: "https://stardevstudio.id" }],
   creator: "StarDev Studio",
@@ -33,9 +36,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "StarDev Studio — Web, AI & Digital Solutions",
+    title: "Jasa Pembuatan Website Profesional & UMKM | StarDev Studio",
     description:
-      "StarDev Studio membangun website, web application, AI automation, dan digital solutions untuk bisnis modern.",
+      "Jasa buat website profesional, modern, responsif, dan terpercaya untuk bisnis Anda. Paket mulai 700rb. Gratis domain & hosting, sertifikat SSL HTTPS, dan optimasi SEO Google.",
     url: "https://stardevstudio.id",
     siteName: "StarDev Studio",
     images: [
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
         url: "/logo/LOGO STARDEVSTUDIO.png",
         width: 521,
         height: 116,
-        alt: "StarDev Studio",
+        alt: "StarDev Studio — Jasa Pembuatan Website",
       },
     ],
     locale: "id_ID",
@@ -51,15 +54,93 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "StarDev Studio — Web, AI & Digital Solutions",
+    title: "Jasa Pembuatan Website Profesional & UMKM | StarDev Studio",
     description:
-      "StarDev Studio membangun website, web application, AI automation, dan digital solutions untuk bisnis modern.",
+      "Jasa buat website profesional, modern, responsif, dan terpercaya untuk bisnis Anda. Paket mulai 700rb. Gratis domain & hosting, sertifikat SSL HTTPS, dan optimasi SEO Google.",
     images: ["/logo/LOGO STARDEVSTUDIO.png"],
   },
   icons: {
     icon: "/logo/LOGO STARDEVSTUDIO.png",
     apple: "/logo/LOGO STARDEVSTUDIO.png",
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://stardevstudio.id/#website",
+      "url": "https://stardevstudio.id",
+      "name": "StarDev Studio",
+      "alternateName": ["StarDev", "StarDev Studio Indonesia"],
+      "description":
+        "Jasa pembuatan website profesional, modern, responsif, dan sistem digital untuk bisnis & UMKM.",
+      "inLanguage": "id-ID",
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://stardevstudio.id/#organization",
+      "name": "StarDev Studio",
+      "url": "https://stardevstudio.id",
+      "logo": "https://stardevstudio.id/logo/LOGO%20STARDEVSTUDIO.png",
+      "image": "https://stardevstudio.id/logo/LOGO%20STARDEVSTUDIO.png",
+      "description":
+        "Jasa pembuatan website profesional, modern, responsif, dan terpercaya untuk bisnis Anda. Paket mulai 700rb gratis domain dan hosting.",
+      "telephone": "+6281929442611",
+      "priceRange": "IDR 700.000 - 3.000.000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ID",
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Paket Pembuatan Website",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Paket Silver Website",
+              "description": "Website sederhana dan praktis untuk bisnis baru",
+            },
+            "price": "700000",
+            "priceCurrency": "IDR",
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Paket Gold Website",
+              "description": "Website e-commerce, toko online & blog lengkap",
+            },
+            "price": "1600000",
+            "priceCurrency": "IDR",
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Paket Diamond Website",
+              "description": "Website profil bisnis & company profile terpercaya",
+            },
+            "price": "2000000",
+            "priceCurrency": "IDR",
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Paket Platinum Website",
+              "description": "Website sistem kustom, web app & interaktivitas eksklusif",
+            },
+            "price": "3000000",
+            "priceCurrency": "IDR",
+          },
+        ],
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -72,6 +153,12 @@ export default function RootLayout({
       lang="id"
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="bg-[#050505] text-[#F5F5F5] min-h-screen flex flex-col selection:bg-blue-600 selection:text-white">
         {children}
       </body>
