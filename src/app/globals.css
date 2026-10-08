@@ -98,6 +98,158 @@
   background: #2563EB;
 }
 
+/* ============================================================
+   COOL EFFECTS & ANIMATIONS: Text Shimmer, Glows, and Micro-interactions
+   ============================================================ */
+
+@keyframes text-shimmer-sweep {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-gentle-reverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes btn-sweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+@keyframes badge-sweep {
+  0%, 70% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* Text Shimmer Effect */
+.text-shimmer {
+  background: linear-gradient(90deg, #60a5fa 0%, #38bdf8 25%, #ffffff 50%, #38bdf8 75%, #818cf8 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer-sweep 4s linear infinite;
+  display: inline-block;
+}
+
+.text-shimmer-fast {
+  background: linear-gradient(90deg, #60a5fa 0%, #38bdf8 25%, #ffffff 50%, #38bdf8 75%, #818cf8 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer-sweep 2.5s linear infinite;
+  display: inline-block;
+}
+
+/* Neon Text Glow */
+.text-glow-blue {
+  text-shadow: 0 0 25px rgba(37, 99, 235, 0.5), 0 0 50px rgba(6, 182, 212, 0.3);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 25px rgba(6, 182, 212, 0.55), 0 0 50px rgba(37, 99, 235, 0.35);
+}
+
+/* Button Shimmer Sweep Effect */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-25deg);
+  pointer-events: none;
+}
+
+.btn-shimmer:hover::before {
+  animation: btn-sweep 1s ease-in-out infinite;
+}
+
+/* Badge Light Sweep */
+.badge-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-25deg);
+  pointer-events: none;
+  animation: badge-sweep 4s ease-in-out infinite;
+}
+
+/* Floating Animations */
+.animate-float {
+  animation: float-gentle 4.5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-gentle 7s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Interactive Card Hover Glow */
+.card-interactive {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-interactive:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px -12px rgba(37, 99, 235, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.4);
+}
+
 /* Hide Next.js Development Indicators completely */
 nextjs-portal,
 #nextjs-dev-tools,

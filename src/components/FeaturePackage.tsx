@@ -65,17 +65,17 @@ export const FeaturePackage: React.FC<FeaturePackageProps> = ({ id = "features" 
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
-              whileHover={{ y: -6 }}
-              className="bg-white rounded-[26px] p-6 sm:p-7 border border-neutral-100 shadow-[0_6px_28px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_36px_rgba(11,53,200,0.12)] transition-all duration-300 flex items-start gap-4 sm:gap-5 group"
+              whileHover={{ y: -8 }}
+              className="bg-white rounded-[26px] p-6 sm:p-7 border border-neutral-100 shadow-[0_6px_28px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_40px_rgba(11,53,200,0.16)] hover:border-blue-500/30 transition-all duration-300 flex items-start gap-4 sm:gap-5 group cursor-default"
             >
               {/* Circular Icon with Blue Border (sesuai foto 1) */}
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-[#0B35C8] flex items-center justify-center shrink-0 bg-white shadow-xs group-hover:scale-105 group-hover:bg-blue-50/50 transition-all duration-300">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-[#0B35C8] flex items-center justify-center shrink-0 bg-white shadow-xs group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-[0_0_20px_rgba(11,53,200,0.25)] group-hover:bg-blue-50/50 transition-all duration-300">
                 {getIcon(item.iconName)}
               </div>
 
               {/* Title & Description */}
               <div className="flex-1 min-w-0 pt-0.5">
-                <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-2 leading-snug tracking-tight">
+                <h3 className="text-base sm:text-lg font-bold text-neutral-900 group-hover:text-blue-600 mb-2 leading-snug tracking-tight transition-colors duration-200">
                   {item.title}
                 </h3>
                 <p className="text-xs sm:text-[13px] text-neutral-600 leading-relaxed font-normal">

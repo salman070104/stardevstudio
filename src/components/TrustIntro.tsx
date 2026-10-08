@@ -51,21 +51,21 @@ export const TrustIntro: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 01: Hero Blue Card (Equivalent to the vibrant card in screenshot) */}
           <motion.div
-            whileHover={{ y: -6 }}
+            whileHover={{ y: -8 }}
             transition={{ duration: 0.3 }}
-            className="group relative rounded-3xl bg-blue-600 text-white p-8 sm:p-9 shadow-xl shadow-blue-600/20 flex flex-col justify-between overflow-hidden"
+            className="group relative rounded-3xl bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white p-8 sm:p-9 shadow-xl shadow-blue-600/25 hover:shadow-[0_20px_50px_rgba(37,99,235,0.45)] flex flex-col justify-between overflow-hidden card-interactive"
           >
             {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-400/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-400/25 rounded-full blur-2xl pointer-events-none group-hover:scale-150 transition-transform duration-500" />
 
             <div>
               <div className="flex items-center justify-between mb-8">
-                <span className="font-mono text-xs uppercase tracking-widest bg-white/20 px-3 py-1 rounded-full text-white font-semibold">
+                <span className="font-mono text-xs uppercase tracking-widest bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-white font-semibold shadow-xs">
                   01
                 </span>
-                <Globe className="w-6 h-6 text-cyan-200" />
+                <Globe className="w-6 h-6 text-cyan-200 group-hover:rotate-12 transition-transform duration-300" />
               </div>
-              <div className="text-4xl sm:text-5xl font-black tracking-tight mb-2 font-display">
+              <div className="text-4xl sm:text-5xl font-black tracking-tight mb-2 font-display drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]">
                 WEB
               </div>
               <div className="text-xl font-bold uppercase tracking-wide text-cyan-100">
@@ -80,25 +80,25 @@ export const TrustIntro: React.FC = () => {
               </p>
               <div className="mt-4 flex items-center gap-2 text-xs font-mono text-cyan-200 font-semibold">
                 <span>99/100 Lighthouse Speed</span>
-                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </div>
             </div>
           </motion.div>
 
           {/* Card 02: Dark Modern Card (Equivalent to the black 98% card in screenshot) */}
           <motion.div
-            whileHover={{ y: -6 }}
+            whileHover={{ y: -8 }}
             transition={{ duration: 0.3 }}
-            className="group relative rounded-3xl bg-[#050505] text-white p-8 sm:p-9 shadow-xl shadow-black/20 flex flex-col justify-between border border-neutral-800"
+            className="group relative rounded-3xl bg-gradient-to-br from-[#0B0F19] to-[#050505] text-white p-8 sm:p-9 shadow-xl shadow-black/40 flex flex-col justify-between border border-white/10 hover:border-cyan-500/50 hover:shadow-[0_20px_50px_rgba(6,182,212,0.25)] card-interactive"
           >
             <div>
               <div className="flex items-center justify-between mb-8">
                 <span className="font-mono text-xs uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full text-neutral-300 font-semibold">
                   02
                 </span>
-                <Cpu className="w-6 h-6 text-cyan-400" />
+                <Cpu className="w-6 h-6 text-cyan-400 group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <div className="text-4xl sm:text-5xl font-black tracking-tight mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 font-display">
+              <div className="text-4xl sm:text-5xl font-black tracking-tight mb-2 text-shimmer drop-shadow-[0_0_25px_rgba(6,182,212,0.4)] font-display">
                 AI &amp; AUTO
               </div>
               <div className="text-xl font-bold uppercase tracking-wide text-neutral-200">
@@ -113,23 +113,23 @@ export const TrustIntro: React.FC = () => {
               </p>
               <div className="mt-4 flex items-center gap-2 text-xs font-mono text-cyan-400 font-semibold">
                 <span>24/7 Autonomous Workflows</span>
-                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </div>
             </div>
           </motion.div>
 
           {/* Card 03: Crisp White/Light Card with fine border */}
           <motion.div
-            whileHover={{ y: -6 }}
+            whileHover={{ y: -8 }}
             transition={{ duration: 0.3 }}
-            className="group relative rounded-3xl bg-[#F5F5F5] text-neutral-900 p-8 sm:p-9 shadow-lg shadow-neutral-200/50 flex flex-col justify-between border border-neutral-300/80"
+            className="group relative rounded-3xl bg-[#FFFFFF] text-neutral-900 p-8 sm:p-9 shadow-lg shadow-neutral-200/60 hover:shadow-[0_20px_45px_rgba(11,53,200,0.15)] hover:border-blue-500/40 flex flex-col justify-between border border-neutral-200 card-interactive"
           >
             <div>
               <div className="flex items-center justify-between mb-8">
                 <span className="font-mono text-xs uppercase tracking-widest bg-neutral-900 text-white px-3 py-1 rounded-full font-semibold">
                   03
                 </span>
-                <Layers className="w-6 h-6 text-blue-600" />
+                <Layers className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div className="text-4xl sm:text-5xl font-black tracking-tight mb-2 text-neutral-950 font-display">
                 CUSTOM

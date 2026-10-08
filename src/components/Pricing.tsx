@@ -94,9 +94,9 @@ export const Pricing: React.FC = () => {
                   {/* Detail Paket Button */}
                   <button
                     onClick={() => setSelectedPlan(plan)}
-                    className={`w-full py-2.5 px-5 rounded-full font-semibold text-xs sm:text-sm shadow-xs transition-all duration-200 mb-5 cursor-pointer ${
+                    className={`w-full py-2.5 px-5 rounded-full font-semibold text-xs sm:text-sm shadow-xs transition-all duration-300 mb-5 cursor-pointer hover:scale-105 active:scale-95 ${
                       isFeatured
-                        ? "bg-white text-neutral-900 hover:bg-blue-50"
+                        ? "bg-white text-neutral-900 hover:bg-blue-50 shadow-md"
                         : "bg-white text-neutral-800 border border-neutral-200/80 hover:bg-neutral-50 hover:border-neutral-300"
                     }`}
                   >
@@ -115,15 +115,15 @@ export const Pricing: React.FC = () => {
                     {plan.renewal}
                   </span>
 
-                  {/* Book Now Button */}
+                  {/* Book Now Button with Shimmer Sweep */}
                   <a
                     href={getWhatsAppUrl(plan)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-full py-3 px-5 rounded-full font-semibold text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-md transition-all duration-200 hover:scale-[1.02] ${
+                    className={`btn-shimmer w-full py-3 px-5 rounded-full font-semibold text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer ${
                       isFeatured
-                        ? "bg-[#071F6E] hover:bg-[#051752] text-white shadow-blue-950/40"
-                        : "bg-[#0D237D] hover:bg-[#091b61] text-white shadow-blue-900/20"
+                        ? "bg-[#071F6E] hover:bg-[#051752] text-white shadow-blue-950/40 hover:shadow-[0_0_25px_rgba(7,31,110,0.6)]"
+                        : "bg-[#0D237D] hover:bg-[#091b61] text-white shadow-blue-900/20 hover:shadow-[0_0_25px_rgba(13,35,125,0.5)]"
                     }`}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}

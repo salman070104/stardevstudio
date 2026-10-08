@@ -165,3 +165,121 @@ export const websiteSolutions: WebsiteSolution[] = [
     suitableFor: "Dinas Pemda, OPD, Badan Daerah, dan Lembaga Instansi Publik"
   }
 ];
+
+export interface MainService {
+  id: string;
+  title: string;
+  slug: string;
+  href: string;
+  tagline: string;
+  description: string;
+  features: string[];
+  badge: string;
+  iconName: "Globe" | "Search" | "Target" | "Code2" | "Share2" | "Sparkles";
+}
+
+export const mainServicesList: MainService[] = [
+  {
+    id: "jasa-pembuatan-website",
+    title: "Jasa Pembuatan Website",
+    slug: "jasa-pembuatan-website",
+    href: "/layanan#jasa-pembuatan-website",
+    tagline: "Website profesional, responsif, dan berkecepatan tinggi dengan garansi performa",
+    description:
+      "Layanan pembuatan website company profile, katalog bisnis, landing page, dan toko online modern yang dirancang khusus untuk meningkatkan konversi dan kredibilitas brand Anda.",
+    features: [
+      "Desain Modern & Eksklusif",
+      "Kecepatan Loading Sub-Detik (99/100 Lighthouse)",
+      "Responsif di Semua Perangkat (HP/Tablet/Laptop)",
+      "Gratis Domain .com & Cloud Hosting 1 Tahun"
+    ],
+    badge: "Populer",
+    iconName: "Globe"
+  },
+  {
+    id: "seo-bergaransi",
+    title: "SEO Bergaransi",
+    slug: "seo-bergaransi",
+    href: "/layanan#seo-bergaransi",
+    tagline: "Optimasi peringkat halaman 1 Google bergaransi dengan teknik SEO White-Hat teruji",
+    description:
+      "Membawa website Anda ke halaman pertama Google untuk mendatangkan calon pembeli potensial secara organik tanpa harus terus-menerus membayar biaya iklan.",
+    features: [
+      "Riset Keyword dengan Niat Beli Tinggi",
+      "Optimasi SEO On-Page & Technical Audit",
+      "Link Building Berkualitas (High DA/DR)",
+      "Garansi Kenaikan Peringkat & Traffic Organik"
+    ],
+    badge: "Bergaransi",
+    iconName: "Search"
+  },
+  {
+    id: "iklan-google-ads",
+    title: "Iklan Google Ads",
+    slug: "iklan-google-ads",
+    href: "/layanan#iklan-google-ads",
+    tagline: "Kampanye iklan Google Search & Performance Max terukur untuk hasil konversi instan",
+    description:
+      "Tampilkan bisnis Anda di hadapan calon pelanggan saat mereka aktif mencari produk/jasa Anda di Google Search, YouTube, dan jaringan Display.",
+    features: [
+      "Setup Akun & Struktur Kampanye Terbaik",
+      "Penargetan Kata Kunci Presisi & Negative Keywords",
+      "Optimasi Quality Score & Cost-Per-Click (CPC)",
+      "Laporan Konversi & ROI Transparan Setiap Minggu"
+    ],
+    badge: "Hasil Cepat",
+    iconName: "Target"
+  },
+  {
+    id: "pembuatan-aplikasi",
+    title: "Pembuatan Aplikasi",
+    slug: "pembuatan-aplikasi",
+    href: "/layanan#pembuatan-aplikasi",
+    tagline: "Aplikasi web kustom, sistem informasi bisnis, portal pelanggan, dan SaaS scalable",
+    description:
+      "Pengembangan software aplikasi berbasis web dan mobile untuk otomatisasi alur kerja operasional, pengelolaan inventori, portal login klien, hingga sistem POS kasir.",
+    features: [
+      "Arsitektur Fullstack Modern & Scalable",
+      "Database Relasional Aman & Backup Otomatis",
+      "Role & Permission Manajemen Pengguna",
+      "Integrasi API WhatsApp & Payment Gateway"
+    ],
+    badge: "Custom System",
+    iconName: "Code2"
+  },
+  {
+    id: "jasa-sosial-media-ads",
+    title: "Jasa Sosial Media Ads",
+    slug: "jasa-sosial-media-ads",
+    href: "/layanan#jasa-sosial-media-ads",
+    tagline: "Iklan Meta (Facebook & Instagram) serta TikTok Ads dengan targeting audiens presisi",
+    description:
+      "Maksimalkan penjualan dengan kampanye iklan media sosial yang menarik, kreatif, dan ditargetkan langsung kepada demografi serta minat audiens yang tepat.",
+    features: [
+      "Pembuatan Copywriting & Materi Visual Iklan",
+      "Pemasangan Meta Pixel & Tracking Konversi Akurat",
+      "A/B Testing Copy, Hook, & Target Audiens",
+      "Optimasi ROAS (Return on Ad Spend) Berkelanjutan"
+    ],
+    badge: "Tinggi Konversi",
+    iconName: "Share2"
+  },
+  {
+    id: "creative-digital-agency",
+    title: "Creative Digital Agency",
+    slug: "creative-digital-agency",
+    href: "/layanan#creative-digital-agency",
+    tagline: "Layanan branding lengkap, identitas visual, UI/UX premium, dan strategi digital bisnis",
+    description:
+      "Mitra kreatif end-to-end untuk merancang identitas brand yang memikat, desain user interface (UI/UX) intuitif, hingga perumusan strategi transformasi digital jangka panjang.",
+    features: [
+      "Brand Identity, Logo & Design Guidelines",
+      "UI/UX Design Prototipe Interaktif (Figma)",
+      "Copywriting Penjualan & Storytelling Brand",
+      "Konsultasi Strategi Transformasi Digital 360°"
+    ],
+    badge: "Full Service",
+    iconName: "Sparkles"
+  }
+];
+

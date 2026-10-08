@@ -16,16 +16,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
       id="home"
       className="relative min-h-[92vh] lg:min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 flex items-center bg-[#050505] text-white overflow-hidden bg-grid-dark"
     >
-      {/* Ambient gradient glow orbs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-600/15 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/3 -right-32 w-96 h-96 bg-cyan-500/15 rounded-full blur-[130px] pointer-events-none" />
+      {/* Ambient gradient glow orbs with breathing pulse */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-600/20 rounded-full blur-[130px] pointer-events-none animate-pulse-glow" />
+      <div className="absolute top-1/3 -right-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-[140px] pointer-events-none animate-pulse-glow" style={{ animationDelay: "2s" }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         {/* Top Metadata Bar & Sparkle */}
         <div className="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
           <div className="flex items-center gap-3 sm:gap-6 font-mono text-[11px] sm:text-xs text-neutral-400 tracking-widest uppercase">
             <span className="flex items-center gap-1.5 text-cyan-400 font-semibold">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
               WEB
             </span>
             <span className="text-neutral-600">/</span>
@@ -38,8 +38,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             <span className="hidden sm:inline-block font-mono text-xs text-neutral-400">
               EST. 2026 • JAKARTA, ID
             </span>
-            <div className="w-7 h-7 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="w-7 h-7 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+              <Sparkles className="w-3.5 h-3.5 animate-pulse" />
             </div>
           </div>
         </div>
@@ -48,31 +48,37 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left Column (Headline + Supporting Copy + CTAs) */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            {/* Tagline / Sub-badge */}
+            {/* Tagline / Sub-badge with Shimmer Effect */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit mb-5"
+              className="badge-shine inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-indigo-500/10 border border-cyan-500/30 w-fit mb-5 shadow-[0_0_20px_rgba(6,182,212,0.15)]"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-              <span className="text-xs uppercase tracking-wider text-neutral-300 font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+              <span className="text-xs uppercase tracking-wider text-cyan-200 font-medium font-mono">
                 Build Your Digital Future
               </span>
             </motion.div>
 
-            {/* Huge Display Headline */}
+            {/* Huge Display Headline with Dynamic Text Shimmer */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-6xl md:text-7xl xl:text-[80px] font-black uppercase tracking-tight leading-[0.92] text-white font-display"
             >
-              WE BUILD <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-neutral-100 to-neutral-400">
+                WE BUILD
+              </span>{" "}
+              <br />
+              <span className="text-shimmer drop-shadow-[0_0_35px_rgba(37,99,235,0.5)]">
                 THE DIGITAL
-              </span> <br />
-              FUTURE.
+              </span>{" "}
+              <br />
+              <span className="text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]">
+                FUTURE.
+              </span>
             </motion.h1>
 
             {/* Supporting Copy */}
@@ -86,7 +92,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
               experiences yang cepat, modern, dan scalable.
             </motion.p>
 
-            {/* CTAs */}
+            {/* CTAs with Button Shimmer & Glowing Hover */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -95,17 +101,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             >
               <button
                 onClick={onOpenContact}
-                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-xl shadow-blue-600/30 hover:shadow-blue-500/50 hover:scale-[1.02]"
+                className="btn-shimmer group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-xl shadow-blue-600/35 hover:shadow-[0_0_40px_rgba(37,99,235,0.65)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
               >
                 <span>Start a Project</span>
-                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>
               </button>
 
               <a
                 href="#pricing"
-                className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white/5 hover:bg-white/10 text-neutral-200 border border-white/15 font-semibold text-sm uppercase tracking-wider transition-all duration-200 hover:border-white/30"
+                className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white/5 hover:bg-white/10 text-neutral-200 border border-white/15 hover:border-cyan-400/50 font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_25px_rgba(6,182,212,0.25)] hover:scale-[1.03] active:scale-[0.98]"
               >
                 <span>Lihat Paket Harga</span>
               </a>

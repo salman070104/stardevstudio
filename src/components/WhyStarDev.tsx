@@ -35,12 +35,12 @@ export const WhyStarDev: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-white/10 gap-6">
           <div>
             <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 font-semibold mb-3 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-cyan-400" />
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
               OUR ADVANTAGE
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white font-display">
               WHY <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">
+              <span className="text-shimmer drop-shadow-[0_0_30px_rgba(6,182,212,0.5)]">
                 STARDEV?
               </span>
             </h2>
@@ -61,32 +61,32 @@ export const WhyStarDev: React.FC = () => {
             return (
               <motion.div
                 key={benefit.number}
-                whileHover={{ y: -6 }}
+                whileHover={{ y: -8 }}
                 transition={{ duration: 0.25 }}
-                className={`rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 border ${
+                className={`rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 border card-interactive group cursor-default ${
                   isFeatured
-                    ? "bg-gradient-to-br from-[#0B0F19] to-[#0D1527] border-blue-500/40 shadow-xl shadow-blue-900/15"
-                    : "bg-[#0B0F19]/70 border-white/10 hover:border-white/20"
+                    ? "bg-gradient-to-br from-[#0B0F19] to-[#0D1527] border-blue-500/40 shadow-xl shadow-blue-900/15 hover:border-cyan-400/60 hover:shadow-[0_20px_45px_rgba(37,99,235,0.3)]"
+                    : "bg-[#0B0F19]/70 border-white/10 hover:border-blue-500/40 hover:shadow-[0_20px_45px_rgba(37,99,235,0.25)]"
                 }`}
               >
                 <div>
                   {/* Top Bar: Number & Badge */}
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-mono text-xs uppercase tracking-widest bg-white/5 border border-white/10 px-3 py-1 rounded-full text-neutral-300 font-bold">
+                    <span className="font-mono text-xs uppercase tracking-widest bg-white/5 border border-white/10 group-hover:border-blue-500/40 group-hover:bg-blue-500/10 group-hover:text-cyan-300 px-3 py-1 rounded-full text-neutral-300 font-bold transition-all duration-300">
                       {benefit.number}
                     </span>
                     <div className="flex items-center gap-2">
                       <span className="text-[11px] font-mono text-cyan-400">
                         {benefit.badge}
                       </span>
-                      <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-white/5 group-hover:bg-white/10 group-hover:scale-110 group-hover:rotate-6 flex items-center justify-center transition-all duration-300">
                         {getIcon(benefit.number)}
                       </div>
                     </div>
                   </div>
 
                   {/* Benefit Title */}
-                  <h3 className="text-2xl font-black uppercase tracking-tight text-white font-display mb-3">
+                  <h3 className="text-2xl font-black uppercase tracking-tight text-white group-hover:text-cyan-300 font-display mb-3 transition-colors duration-200">
                     {benefit.title}
                   </h3>
 

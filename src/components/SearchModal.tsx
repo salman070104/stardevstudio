@@ -17,7 +17,7 @@ import {
 export interface SearchItem {
   id: string;
   title: string;
-  category: "Paket Harga" | "Fitur" | "Navigasi" | "Kontak";
+  category: "Paket Harga" | "Layanan" | "Fitur" | "Navigasi" | "Kontak";
   description: string;
   badge?: string;
   action: () => void;
@@ -92,6 +92,56 @@ export const SearchModal: React.FC<SearchModalProps> = ({
       description: "IDR. 3JUTA • Fitur kompleks, kustom & desain interaktif eksklusif",
       badge: "Enterprise",
       action: () => navigateTo("/layanan#pricing"),
+    },
+
+    // 6 Layanan Unggulan (Sesuai Submenu Navbar)
+    {
+      id: "srv-jasa-pembuatan-website",
+      title: "Jasa Pembuatan Website",
+      category: "Layanan",
+      description: "Website profesional, responsif, dan berkecepatan tinggi dengan garansi",
+      badge: "Populer",
+      action: () => navigateTo("/layanan#jasa-pembuatan-website"),
+    },
+    {
+      id: "srv-seo-bergaransi",
+      title: "SEO Bergaransi",
+      category: "Layanan",
+      description: "Optimasi peringkat halaman 1 Google bergaransi trafik organik",
+      badge: "Bergaransi",
+      action: () => navigateTo("/layanan#seo-bergaransi"),
+    },
+    {
+      id: "srv-iklan-google-ads",
+      title: "Iklan Google Ads",
+      category: "Layanan",
+      description: "Kampanye iklan Google Search & Performance Max terukur",
+      badge: "Ads",
+      action: () => navigateTo("/layanan#iklan-google-ads"),
+    },
+    {
+      id: "srv-pembuatan-aplikasi",
+      title: "Pembuatan Aplikasi",
+      category: "Layanan",
+      description: "Aplikasi web kustom, sistem informasi bisnis, dan SaaS scalable",
+      badge: "Sistem",
+      action: () => navigateTo("/layanan#pembuatan-aplikasi"),
+    },
+    {
+      id: "srv-jasa-sosial-media-ads",
+      title: "Jasa Sosial Media Ads",
+      category: "Layanan",
+      description: "Iklan Meta (FB/IG) & TikTok Ads dengan targeting audiens presisi",
+      badge: "Ads",
+      action: () => navigateTo("/layanan#jasa-sosial-media-ads"),
+    },
+    {
+      id: "srv-creative-digital-agency",
+      title: "Creative Digital Agency",
+      category: "Layanan",
+      description: "Layanan branding lengkap, identitas visual, UI/UX, & strategi digital",
+      badge: "Agency",
+      action: () => navigateTo("/layanan#creative-digital-agency"),
     },
 
     // Fitur Unggulan
@@ -258,6 +308,8 @@ export const SearchModal: React.FC<SearchModalProps> = ({
     switch (category) {
       case "Paket Harga":
         return <CreditCard className="w-4 h-4 text-blue-400" />;
+      case "Layanan":
+        return <Sparkles className="w-4 h-4 text-cyan-400" />;
       case "Fitur":
         return <CheckCircle2 className="w-4 h-4 text-emerald-400" />;
       case "Navigasi":

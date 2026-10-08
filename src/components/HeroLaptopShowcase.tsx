@@ -68,11 +68,11 @@ export const HeroLaptopShowcase: React.FC = () => {
     >
       {/* Background ambient lighting glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
-        <div className="w-[380px] sm:w-[520px] h-[320px] bg-gradient-to-tr from-blue-600/30 via-cyan-500/25 to-indigo-600/20 rounded-full blur-[110px]" />
+        <div className="w-[380px] sm:w-[540px] h-[340px] bg-gradient-to-tr from-blue-600/35 via-cyan-500/30 to-indigo-600/25 rounded-full blur-[110px] animate-pulse-glow" />
       </div>
 
-      {/* Main Laptop PNG Mockup Container with Smooth Animated Switching */}
-      <div className="relative w-full aspect-[16/10] flex items-center justify-center">
+      {/* Main Laptop PNG Mockup Container with Smooth Floating & Animated Switching */}
+      <div className="relative w-full aspect-[16/10] flex items-center justify-center animate-float">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentProject.id}
