@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Sparkles, Terminal, Cpu, Layers, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Logo } from "./Logo";
 import { HeroLaptopShowcase } from "./HeroLaptopShowcase";
 
@@ -14,36 +14,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] lg:min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 flex items-center bg-[#050505] text-white overflow-hidden bg-grid-dark"
+      className="relative min-h-[85vh] lg:min-h-[90vh] pt-24 pb-14 lg:pt-28 lg:pb-18 flex items-center bg-[#050505] text-white overflow-hidden bg-grid-dark"
     >
       {/* Ambient gradient glow orbs with breathing pulse */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-600/20 rounded-full blur-[130px] pointer-events-none animate-pulse-glow" />
       <div className="absolute top-1/3 -right-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-[140px] pointer-events-none animate-pulse-glow" style={{ animationDelay: "2s" }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        {/* Top Metadata Bar & Sparkle */}
-        <div className="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
-          <div className="flex items-center gap-3 sm:gap-6 font-mono text-[11px] sm:text-xs text-neutral-400 tracking-widest uppercase">
-            <span className="flex items-center gap-1.5 text-cyan-400 font-semibold">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-              WEB
-            </span>
-            <span className="text-neutral-600">/</span>
-            <span className="text-blue-400 font-semibold">AI</span>
-            <span className="text-neutral-600">/</span>
-            <span className="text-neutral-300 font-semibold">AUTOMATION</span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="hidden sm:inline-block font-mono text-xs text-neutral-400">
-              EST. 2026 • JAKARTA, ID
-            </span>
-            <div className="w-7 h-7 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 shadow-[0_0_15px_rgba(37,99,235,0.3)]">
-              <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-            </div>
-          </div>
-        </div>
-
         {/* Main Grid: Asymmetric Layout (inspired by editorial reference) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left Column (Headline + Supporting Copy + CTAs) */}
