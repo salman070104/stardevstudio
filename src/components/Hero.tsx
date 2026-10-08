@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Logo } from "./Logo";
 import { HeroLaptopShowcase } from "./HeroLaptopShowcase";
+import { TextVelocity } from "./TextVelocity";
 
 interface HeroProps {
   onOpenContact?: () => void;
@@ -14,15 +15,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] lg:min-h-[90vh] pt-24 pb-14 lg:pt-28 lg:pb-18 flex items-center bg-[#050505] text-white overflow-hidden bg-grid-dark"
+      className="relative min-h-[90vh] lg:min-h-screen pt-24 pb-0 lg:pt-28 flex flex-col justify-between bg-[#050505] text-white overflow-hidden bg-grid-dark"
     >
       {/* Ambient gradient glow orbs with breathing pulse */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-600/20 rounded-full blur-[130px] pointer-events-none animate-pulse-glow" />
       <div className="absolute top-1/3 -right-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-[140px] pointer-events-none animate-pulse-glow" style={{ animationDelay: "2s" }} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 flex-1 flex items-center">
         {/* Main Grid: Asymmetric Layout (inspired by editorial reference) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center w-full py-8 lg:py-12">
           {/* Left Column (Headline + Supporting Copy + CTAs) */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Tagline / Sub-badge with Shimmer Effect */}
@@ -141,6 +142,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             <HeroLaptopShowcase />
           </div>
         </div>
+      </div>
+
+      {/* Text Velocity Scrolling Banner (Persis di bawah Trusted Delivery sesuai foto referensi) */}
+      <div className="w-full mt-6 border-t border-b border-white/10 bg-[#050505] relative z-20 overflow-hidden">
+        <TextVelocity
+          texts={[
+            "JASA PEMBUATAN WEBSITE DAN AI AUTOMATION SERTA SOFTWARE ENGINEER / ",
+            "JASA PEMBUATAN WEBSITE DAN AI AUTOMATION SERTA SOFTWARE ENGINEER / ",
+          ]}
+          velocity={2.5}
+        />
       </div>
     </section>
   );
