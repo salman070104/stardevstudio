@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
@@ -14,6 +15,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenSearch }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,13 +30,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenSearch }) =
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Multi-page navigation links sesuai foto referensi
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Features", href: "#features" },
-    { name: "Pricelist", href: "#pricing" },
-    { name: "Why Us", href: "#why-us" },
-    { name: "Process", href: "#process" },
-    { name: "About", href: "#about" },
+    { name: "Home", href: "/" },
+    { name: "Tentang Kami", href: "/tentang-kami" },
+    { name: "Layanan", href: "/layanan" },
+    { name: "Portofolio", href: "/portofolio" },
+    { name: "Blog", href: "/blog" },
+    { name: "Kontak", href: "/kontak" },
   ];
 
   return (
@@ -48,21 +51,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenSearch }) =
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Link href="#home" className="group flex items-center focus:outline-none">
+          <Link href="/" className="group flex items-center focus:outline-none">
             <Logo variant="full" theme="dark" size="md" />
           </Link>
 
-          {/* Desktop Nav Links */}
+          {/* Desktop Nav Links (Multi-page sesuai foto referensi) */}
           <nav className="hidden md:flex items-center gap-1 bg-[#0B0F19]/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-3.5 py-1.5 text-xs uppercase tracking-wider text-neutral-300 hover:text-white transition-colors duration-200 rounded-full hover:bg-white/5 font-medium"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`px-3.5 py-1.5 text-xs sm:text-[13px] tracking-normal transition-colors duration-200 rounded-full font-medium ${
+                    isActive
+                      ? "text-white bg-white/15 font-semibold shadow-xs"
+                      : "text-neutral-300 hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Search Trigger & Mobile Hamburger */}
@@ -81,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenSearch }) =
             <button
               onClick={onOpenSearch}
               className="sm:hidden p-2 rounded-xl text-neutral-300 hover:text-white bg-white/5 border border-white/10 hover:bg-white/10 transition-colors cursor-pointer"
-              aria-label="Cari di website"
+              aria-label="Search"
             >
               <Search className="w-5 h-5 text-blue-400" />
             </button>
@@ -110,19 +120,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenSearch }) =
           >
             <div className="flex flex-col gap-4">
               <div className="text-[11px] font-mono tracking-widest text-cyan-400 uppercase mb-2">
-                // Navigation Menu
+                // Menu Navigasi
               </div>
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-bold uppercase tracking-tight text-neutral-200 hover:text-blue-400 py-1 transition-colors flex items-center justify-between"
-                >
-                  <span>{link.name}</span>
-                  <span className="text-xs font-mono text-neutral-500">→</span>
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`text-base sm:text-lg font-semibold py-1.5 transition-colors flex items-center justify-between ${
+                      isActive
+                        ? "text-blue-400 font-bold"
+                        : "text-neutral-200 hover:text-white"
+                    }`}
+                  >
+                    <span>{link.name}</span>
+                    <span className="text-xs font-mono text-neutral-500">→</span>
+                  </Link>
+                );
+              })}
               <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
                 <button
                   onClick={() => {

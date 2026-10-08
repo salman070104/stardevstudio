@@ -38,12 +38,18 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const scrollToSection = (id: string) => {
+  const navigateTo = (target: string) => {
     onClose();
     setTimeout(() => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+      if (target.startsWith("/")) {
+        window.location.href = target;
+      } else {
+        const el = document.getElementById(target);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.location.href = `/#${target}`;
+        }
       }
     }, 150);
   };
@@ -61,7 +67,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
       category: "Paket Harga",
       description: "IDR. 700K • Website sederhana dan praktis untuk bisnis baru",
       badge: "700K",
-      action: () => scrollToSection("pricing"),
+      action: () => navigateTo("/layanan#pricing"),
     },
     {
       id: "paket-gold",
@@ -69,7 +75,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
       category: "Paket Harga",
       description: "IDR 1,6JUTA • Fitur lengkap e-commerce, toko online & blog",
       badge: "Populer",
-      action: () => scrollToSection("pricing"),
+      action: () => navigateTo("/layanan#pricing"),
     },
     {
       id: "paket-diamond",
@@ -77,7 +83,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
       category: "Paket Harga",
       description: "IDR. 2JUTA • Website profil bisnis profesional & terpercaya",
       badge: "2 Juta",
-      action: () => scrollToSection("pricing"),
+      action: () => navigateTo("/layanan#pricing"),
     },
     {
       id: "paket-platinum",
@@ -85,7 +91,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
       category: "Paket Harga",
       description: "IDR. 3JUTA • Fitur kompleks, kustom & desain interaktif eksklusif",
       badge: "Enterprise",
-      action: () => scrollToSection("pricing"),
+      action: () => navigateTo("/layanan#pricing"),
     },
 
     // Fitur Unggulan
@@ -94,86 +100,86 @@ export const SearchModal: React.FC<SearchModalProps> = ({
       title: "Gratis Domain & Hosting",
       category: "Fitur",
       description: "Sudah termasuk domain resmi dan server cloud berkecepatan tinggi",
-      action: () => scrollToSection("features"),
+      action: () => navigateTo("/layanan#features"),
     },
     {
       id: "fitur-ssl",
       title: "Sertifikat SSL Gratis",
       category: "Fitur",
       description: "Proteksi HTTPS gembok hijau untuk keamanan dan reputasi website",
-      action: () => scrollToSection("features"),
+      action: () => navigateTo("/layanan#features"),
     },
     {
       id: "fitur-responsif",
       title: "Desain Responsif",
       category: "Fitur",
       description: "Tampilan presisi dan optimal di smartphone, tablet, serta komputer",
-      action: () => scrollToSection("features"),
+      action: () => navigateTo("/layanan#features"),
     },
     {
       id: "fitur-seo",
       title: "Optimasi SEO Google",
       category: "Fitur",
       description: "Struktur website dirancang agar cepat terindeks dan ranking di mesin pencari",
-      action: () => scrollToSection("features"),
+      action: () => navigateTo("/layanan#features"),
     },
     {
       id: "fitur-desain-modern",
       title: "Desain Modern",
       category: "Fitur",
       description: "Teknologi modern dan estetika kekinian yang profesional",
-      action: () => scrollToSection("features"),
+      action: () => navigateTo("/layanan#features"),
     },
     {
       id: "fitur-copywriting",
       title: "Layanan Konten & Copywriting",
       category: "Fitur",
       description: "Penulisan kata-kata promosi dan copywriting persuasif siap tayang",
-      action: () => scrollToSection("features"),
+      action: () => navigateTo("/layanan#features"),
     },
 
-    // Navigasi
+    // Navigasi Multi-page
     {
       id: "nav-home",
-      title: "Beranda (Home)",
+      title: "Home",
       category: "Navigasi",
-      description: "Kembali ke bagian atas halaman utama",
-      action: () => scrollToSection("home"),
+      description: "Kembali ke beranda utama StarDev Studio",
+      action: () => navigateTo("/"),
     },
     {
-      id: "nav-features",
-      title: "Our Feature Package",
+      id: "nav-tentang-kami",
+      title: "Tentang Kami",
       category: "Navigasi",
-      description: "Lihat apa saja yang Anda dapatkan di setiap pembuatan website",
-      action: () => scrollToSection("features"),
+      description: "Profil, visi misi, dan dedikasi teknologi StarDev Studio",
+      action: () => navigateTo("/tentang-kami"),
     },
     {
-      id: "nav-pricing",
-      title: "Pricelist & Paket",
+      id: "nav-layanan",
+      title: "Layanan & Pricelist",
       category: "Navigasi",
-      description: "Daftar harga dan pilihan paket website lengkap",
-      action: () => scrollToSection("pricing"),
+      description: "Daftar layanan website, fitur lengkap, dan pilihan paket harga",
+      action: () => navigateTo("/layanan"),
     },
     {
-      id: "nav-why-us",
-      title: "Mengapa StarDev (Why Us)",
+      id: "nav-portofolio",
+      title: "Portofolio",
       category: "Navigasi",
-      description: "Standar rekayasa web kelas enterprise & keunggulan kami",
-      action: () => scrollToSection("why-us"),
+      description: "Galeri karya dan proyek website yang telah kami kerjakan",
+      action: () => navigateTo("/portofolio"),
     },
     {
-      id: "nav-process",
-      title: "Alur Pengerjaan (Process)",
+      id: "nav-blog",
+      title: "Blog & Wawasan",
       category: "Navigasi",
-      description: "5 langkah mudah dari konsultasi hingga website live",
-      action: () => scrollToSection("process"),
+      description: "Artikel teknologi web, tips SEO, dan panduan pertumbuhan bisnis",
+      action: () => navigateTo("/blog"),
     },
     {
-      id: "nav-about",
-      title: "Tentang Kami (About)",
+      id: "nav-kontak",
+      title: "Kontak",
       category: "Navigasi",
-      description: "Filosofi dan dedikasi StarDev Studio",
-      action: () => scrollToSection("about"),
+      description: "Hubungi tim kami via WhatsApp atau formulir konsultasi",
+      action: () => navigateTo("/kontak"),
     },
 
     // Kontak

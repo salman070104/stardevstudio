@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-14 border-b border-white/10">
           {/* Brand Info */}
           <div className="lg:col-span-4 flex flex-col">
-            <Link href="#home" className="inline-block mb-4">
+            <Link href="/" className="inline-block mb-4">
               <Logo variant="full" theme="dark" size="md" />
             </Link>
             <p className="text-sm text-neutral-400 max-w-sm leading-relaxed mb-5 font-normal">
@@ -83,34 +83,34 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-3 text-sm text-neutral-400">
               <li>
-                <a href="#home" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-white transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#features" className="hover:text-white transition-colors">
-                  Features
-                </a>
+                <Link href="/tentang-kami" className="hover:text-white transition-colors">
+                  Tentang Kami
+                </Link>
               </li>
               <li>
-                <a href="#pricing" className="hover:text-white transition-colors">
-                  Pricelist
-                </a>
+                <Link href="/layanan" className="hover:text-white transition-colors">
+                  Layanan
+                </Link>
               </li>
               <li>
-                <a href="#process" className="hover:text-white transition-colors">
-                  Process
-                </a>
+                <Link href="/portofolio" className="hover:text-white transition-colors">
+                  Portofolio
+                </Link>
               </li>
               <li>
-                <a href="#about" className="hover:text-white transition-colors">
-                  About
-                </a>
+                <Link href="/blog" className="hover:text-white transition-colors">
+                  Blog
+                </Link>
               </li>
               <li>
-                <a href="#cta" className="hover:text-white transition-colors">
-                  Contact
-                </a>
+                <Link href="/kontak" className="hover:text-white transition-colors">
+                  Kontak
+                </Link>
               </li>
             </ul>
           </div>
