@@ -184,11 +184,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar: Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-sm text-neutral-400 gap-4">
           <div>© 2026 StarDev Studio. All rights reserved.</div>
-          <div className="flex items-center gap-4">
-            <span>Built with Next.js &amp; Tailwind</span>
-            <span>•</span>
-            <span>stardevstudio.id</span>
-          </div>
+          <div>stardevstudio.id</div>
         </div>
       </div>
     </footer>
