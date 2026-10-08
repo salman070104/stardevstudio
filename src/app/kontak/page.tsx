@@ -166,22 +166,22 @@ export default function KontakPage() {
                           Our Social Media
                         </div>
 
-                        {/* Social Media Circular Buttons */}
+                        {/* Social Media Links (Persis seperti di Footer) */}
                         <div className="flex items-center gap-3">
                           {/* WhatsApp */}
                           <a
                             href="https://wa.me/6281929442611"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-9 h-9 rounded-full bg-white hover:bg-neutral-100 border border-neutral-300/80 flex items-center justify-center transition-all hover:scale-110 shadow-xs"
-                            aria-label="WhatsApp"
-                            title="WhatsApp"
+                            className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center hover:scale-110 transition-all duration-200 shadow-md shadow-[#25D366]/25"
+                            aria-label="WhatsApp StarDev Studio"
+                            title="WhatsApp: 081929442611"
                           >
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src="/WhatsApp.svg.webp"
                               alt="WhatsApp"
-                              className="w-4 h-4 object-contain"
+                              className="w-full h-full object-contain"
                             />
                           </a>
 
@@ -190,32 +190,32 @@ export default function KontakPage() {
                             href="https://www.instagram.com/stardevstudio?stkn=MW5mcWQ1N2JjbnI1dQ=="
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-9 h-9 rounded-full bg-white hover:bg-neutral-100 border border-neutral-300/80 flex items-center justify-center transition-all hover:scale-110 shadow-xs"
-                            aria-label="Instagram"
-                            title="Instagram"
+                            className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center hover:scale-110 transition-all duration-200 shadow-md shadow-[#ee2a7b]/25"
+                            aria-label="Instagram StarDev Studio"
+                            title="Instagram: @stardevstudio"
                           >
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                              src="/Instagram_logo_2022.svg.webp"
+                              src="/images/instagram.png"
                               alt="Instagram"
-                              className="w-4 h-4 object-contain"
+                              className="w-full h-full object-contain"
                             />
                           </a>
 
                           {/* TikTok */}
                           <a
-                            href="https://www.tiktok.com/@stardevstudio?_t=ZS-90sQ68V2d1p&_r=1"
+                            href="https://www.tiktok.com/@jasapembuatanwebsite05?_r=1&_t=ZS-9AMJAapJNZO"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-9 h-9 rounded-full bg-white hover:bg-neutral-100 border border-neutral-300/80 flex items-center justify-center transition-all hover:scale-110 shadow-xs"
-                            aria-label="TikTok"
-                            title="TikTok"
+                            className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center hover:scale-110 transition-all duration-200 shadow-md shadow-cyan-500/25"
+                            aria-label="TikTok StarDev Studio"
+                            title="TikTok: @jasapembuatanwebsite05"
                           >
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                              src="/tiktok-icon-black-1-logo-svgrepo-com.svg"
+                              src="/images/tiktok.png"
                               alt="TikTok"
-                              className="w-3.5 h-3.5 object-contain"
+                              className="w-full h-full object-contain"
                             />
                           </a>
                         </div>
