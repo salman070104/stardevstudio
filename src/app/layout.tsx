@@ -69,6 +69,9 @@ export const metadata: Metadata = {
       { url: "/logo/povicon.png", sizes: "180x180", type: "image/png" },
     ],
   },
+  verification: {
+    google: "google7275fa4304625edf",
+  },
 };
 
 const jsonLd = {
