@@ -13,10 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website Profesional & UMKM | StarDev Studio",
+  title: "Jasa Pembuatan Website Profesional & UMKM | Brebes",
   description:
     "Jasa buat website profesional, modern, responsif, dan terpercaya untuk bisnis Anda. Paket mulai 700rb. Gratis domain & hosting, sertifikat SSL HTTPS, dan optimasi SEO Google. Garansi revisi. Konsultasi WhatsApp gratis.",
   keywords: [
+    "Jasa Website Brebes",
+    "Jasa Pembuatan Website Brebes",
     "Jasa Website",
     "Jasa Pembuatan Website",
     "Jasa Website UMKM",
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Jasa Pembuatan Website Profesional & UMKM | StarDev Studio",
+    title: "Jasa Pembuatan Website Profesional & UMKM | Brebes",
     description:
       "Jasa buat website profesional, modern, responsif, dan terpercaya untuk bisnis Anda. Paket mulai 700rb. Gratis domain & hosting, sertifikat SSL HTTPS, dan optimasi SEO Google.",
     url: "https://stardevstudio.id",
@@ -54,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jasa Pembuatan Website Profesional & UMKM | StarDev Studio",
+    title: "Jasa Pembuatan Website Profesional & UMKM | Brebes",
     description:
       "Jasa buat website profesional, modern, responsif, dan terpercaya untuk bisnis Anda. Paket mulai 700rb. Gratis domain & hosting, sertifikat SSL HTTPS, dan optimasi SEO Google.",
     images: ["/logo/LOGO STARDEVSTUDIO.png"],
